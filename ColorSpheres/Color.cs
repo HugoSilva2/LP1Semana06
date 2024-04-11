@@ -7,7 +7,6 @@ namespace ColorSpheres
 {
     public class Color
     {        
-        
         //colors
         private byte red;
         private byte green;
@@ -23,12 +22,19 @@ namespace ColorSpheres
         //constructors
         public Color(byte r, byte g , byte b, byte a)
         {
-            
+            red = r;
+            green = g;
+            blue = b;
+            alpha = a;
         }
 
-        Color(byte r, byte g, byte b)
+        public Color(byte r, byte g, byte b)
         {
-
+            red = r;
+            green = g;
+            blue = b;
+            alpha = 255;
         }
+
     }
 }
