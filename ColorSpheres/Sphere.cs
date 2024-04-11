@@ -9,7 +9,7 @@ namespace ColorSpheres
     {
         //Variables
         
-        private Color color;
+        readonly private Color color;
         private double radius;
         private int throws;
 
@@ -18,7 +18,7 @@ namespace ColorSpheres
         {
             this.color = color;
             this.radius = radius;
-            this.throws = 0;
+            throws = 0;
         }
 
         //Methods
@@ -42,6 +42,18 @@ namespace ColorSpheres
         public int GetTimesThrown()
         {
             return throws;
+        }
+
+        public void Status()
+        {
+            byte r = color.GetRed();
+            byte g = color.GetGreen();
+            byte b = color.GetBlue();
+            byte a = color.GetAlpha();
+
+            Console.WriteLine($"Color: ({r},{g},{b},{a}).");
+            Console.WriteLine($"Radius: {radius}.");
+            Console.WriteLine($"Times Thrown {throws}.");
         }
     }
 }
