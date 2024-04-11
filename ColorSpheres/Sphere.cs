@@ -22,7 +22,26 @@ namespace ColorSpheres
         }
 
         //Methods
+        public void Pop()
+        {
+            radius = 0;
+        }
 
+        public void Throw()
+        {
+            if (radius == 0)
+            {
+                Console.WriteLine("You can't throw a popped ball");
+            }
+            else
+            {
+                throws += 1;
+            }
+        }
 
+        public int GetTimesThrown()
+        {
+            return throws;
+        }
     }
 }
