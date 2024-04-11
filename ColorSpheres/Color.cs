@@ -36,5 +36,17 @@ namespace ColorSpheres
             alpha = 255;
         }
 
+        //GetGrey Method
+        static byte GetGrey(byte r, byte g, byte b)
+        { 
+            int red = r;
+            int green = g;
+            int blue = b;
+
+            byte grey = (byte) ((red + green + blue) / 3);
+
+            return grey;
+        }
+
     }
 }
