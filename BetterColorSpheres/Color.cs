@@ -8,34 +8,38 @@ namespace BetterColorSpheres
     public class Color
     {        
         //colors
-        private byte red { get;}
-        private byte green { get;}
-        private byte blue { get; set;}
-        private byte alpha { get; set;}
+        public byte Red { get; }
+        public byte Green { get; }
+        public byte Blue { get; }
+        public byte Alpha { get;}
 
+        public byte Grey
+        { 
+            get
+            {
+                byte grey = (byte) ((Red + Green + Blue) / 3);
+                return grey;
+            }
+
+        }
+
+        //construtor
         public Color(byte r, byte g , byte b, byte a)
         {
-            red = r;
-            green = g;
-            blue = b;
-            alpha = a;
+            Red = r;
+            Green = g;
+            Blue = b;
+            Alpha = a;
         }
 
+        //overload
         public Color(byte r, byte g, byte b)
         {
-            red = r;
-            green = g;
-            blue = b;
-            alpha = 255;
+            Red = r;
+            Green = g;
+            Blue = b;
+            Alpha = 255;
         }   
-
-        //GetGrey Method
-        public byte GetGrey()
-        { 
-            byte grey = (byte) ((red + green + blue) / 3);
-
-            return grey;
-        }
 
     }
 }

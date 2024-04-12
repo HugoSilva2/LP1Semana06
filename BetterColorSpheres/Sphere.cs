@@ -10,50 +10,44 @@ namespace BetterColorSpheres
         //Variables
         
         readonly private Color color;
-        private double radius;
-        private int throws;
+        public double Radius {get; private set; }
+        public int Throws {get; private set; }
 
         //Constructor
         public Sphere(Color color, double radius)
         {
             this.color = color;
-            this.radius = radius;
-            throws = 0;
+            this.Radius = radius;
+            Throws = 0;
         }
 
         //Methods
-        public void Pop()
-        {
-            radius = 0;
-        }
+        public void Pop() {this.Radius = 0; }
 
         public void Throw()
         {
-            if (radius == 0)
+            if (this.Radius > 0) this.Throws++;
             {
                 Console.WriteLine("You can't throw a popped ball");
-            }
-            else
-            {
-                throws += 1;
             }
         }
 
         public int GetTimesThrown()
         {
-            return throws;
+            return Throws;
         }
 
         public void Status()
         {
-            byte r = color.GetRed();
-            byte g = color.GetGreen();
-            byte b = color.GetBlue();
-            byte a = color.GetAlpha();
+            byte r = color.Red;
+            byte g = color.Green;
+            byte b = color.Blue;
+            byte a = color.Alpha;
+
 
             Console.WriteLine($"Color: ({r},{g},{b},{a}).");
-            Console.WriteLine($"Radius: {radius}.");
-            Console.WriteLine($"Times Thrown {throws}.");
+            Console.WriteLine($"Radius: {Radius}.");
+            Console.WriteLine($"Times Thrown {Throws}.");
         }
     }
 }
